@@ -25,8 +25,10 @@ public class Perceptron {
         patternElementCategory.add(category);
     }
 
-    private void train() {
+    public void train() {
+        System.out.println("Learn Step:");
         for (int element = 0; element < elements.size(); element++) {
+            System.out.println("Element: " + element);
             for (int pattern = 0; pattern < trainingPatterns.size(); pattern++) {
                 int category = 0;
                 if (element == patternElementCategory.get(pattern)) {
@@ -34,10 +36,13 @@ public class Perceptron {
                 }
                 elements.get(element).learn(trainingPatterns.get(pattern), category);
             }
+            System.out.println();
         }
+        System.out.println();
+        System.out.println();
     }
 
-    private List<Integer> useModel(List<Integer> pattern) {
+    public List<Integer> useModel(List<Integer> pattern) {
         List<Integer> result = new ArrayList<>();
         for (Element element : elements) {
             result.add(element.reaction(pattern));

@@ -46,5 +46,6 @@ public class Element {
                 w[i] += e(pattern) * pattern.get(i) * (C - y);
             }
         }
+        System.out.println("Reaction: " + reaction(pattern));
     }
 }
