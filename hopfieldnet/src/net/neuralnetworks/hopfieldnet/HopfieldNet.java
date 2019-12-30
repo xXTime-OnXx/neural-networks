@@ -21,6 +21,7 @@ public class HopfieldNet {
         if (pattern.length != numberOfElements)
             return;
         categories.add(pattern);
+        System.out.println(categories.size() + ". Category added");
     }
 
     public void train() {
